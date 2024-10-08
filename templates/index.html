@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask post news example</title>
+</head>
+<body>
+    <h1>Flask Framework Example</h1>
+    <form action="/add" method="POST">
+        <input type="text" name="title" placeholder="Title" required><br>
+        <textarea name="content" id="" cols="30" rows="10" placeholder="Content" required>  </textarea>
+        <button type="submit"> Add post</button>
+    </form>
+    <hr>
+    <ul>
+        {%for post in posts %}
+        <li>
+            <h2>{{post.title}}</h2>
+            <p>{{post.content}}</p>
+        </li>
+        {%endfor%}
+    </ul>
+</body>
+</html>
